@@ -5,6 +5,8 @@ import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,11 +27,38 @@ import com.study.common.utils.R;
  * @email sunlightcs@gmail.com
  * @date 2021-07-13 17:11:35
  */
+@RefreshScope
 @RestController
 @RequestMapping("coupont/smscoupon")
 public class SmsCouponController {
     @Autowired
     private SmsCouponService smsCouponService;
+
+    @Value("${coupon.user.name}")
+    private String name;
+
+    @Value("${coupon.user.age}")
+    private String age;
+
+    /**
+     * 测试nacos 配置中心
+     * @return
+     */
+    @RequestMapping("/Configuration/Center")
+    public R testConfigurationCenter(){
+        return R.ok().put("name",name).put("age",age);
+    }
+
+    /**
+     *  用户调用优惠卷
+     * @return
+     */
+    @RequestMapping("/member/list")
+    public R memberCoupons(){
+        SmsCouponEntity couponEntity = new SmsCouponEntity();
+        couponEntity.setCouponName("满100减20");
+        return R.ok().put("coupons",Arrays.asList(couponEntity));
+    }
 
     /**
      * 列表
