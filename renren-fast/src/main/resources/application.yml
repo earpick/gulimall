@@ -40,6 +40,16 @@ spring:
 #  resources:
 #    add-mappings: false
 
+  # 配置nacos 注册中心
+  application:
+    name: renren-fast
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.125:8848
+
+
+
 
 #mybatis
 mybatis-plus:

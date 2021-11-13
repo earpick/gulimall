@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        ## 所有前端项目网络请求 ip：port/api/。。。
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}

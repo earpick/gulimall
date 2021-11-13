@@ -62,13 +62,13 @@
             <version>5.5.0</version>
         </dependency>
 
-        <!-- 微服务的注册中心  -->
+        <!-- 微服务的nacos注册中心  -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
-        <!--  微服务配置中心  -->
+        <!--  微服务nacos配置中心  -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
