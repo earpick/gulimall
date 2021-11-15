@@ -2,6 +2,11 @@
 server:
   port: 12000
 
+# 控制台打印debug日志
+logging:
+  level:
+    com.study.gulimall: debug
+
 # 配置数据库源
 spring:
   datasource:
@@ -18,7 +23,7 @@ spring:
   application:
     name: gulimall-product
 
-# MapperScan
+# MybatisPlus配置
 # sql映射文件位置
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
@@ -26,3 +31,8 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
+      # mybatis-plus 全局配置逻辑删除
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+
+

@@ -2,7 +2,13 @@ spring:
   cloud:
     gateway:
       routes:
-        ## 所有前端项目网络请求 ip：port/api/。。。
+        - id: product_route
+          uri: lb://gulimall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
         - id: admin_route
           uri: lb://renren-fast
           predicates:
