@@ -20,6 +20,13 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.1.125:8848
+# oss 文件上传服务器配置
+    alicloud:
+      access-key: LTAI5tLR5jqVqDdDuZJkpbwu
+      secret-key: PUqjTLyi1Ymd2Wrn1onfJSxfeF62K8
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+
   application:
     name: gulimall-product
 
@@ -34,5 +41,4 @@ mybatis-plus:
       # mybatis-plus 全局配置逻辑删除
       logic-delete-value: 1 # 逻辑已删除值(默认为 1)
       logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
-
 

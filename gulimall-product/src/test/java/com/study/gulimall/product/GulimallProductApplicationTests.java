@@ -1,7 +1,7 @@
 package com.study.gulimall.product;
 
 
-import com.aliyun.oss.OSSClient;
+import com.aliyun.oss.OSS;
 import com.study.gulimall.product.entity.BrandEntity;
 import com.study.gulimall.product.service.BrandService;
 import org.junit.jupiter.api.Test;
@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.annotation.Resource;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -22,8 +23,8 @@ class GulimallProductApplicationTests {
     @Autowired
     BrandService brandService;
 
-    @Autowired
-    OSSClient ossClient;
+    @Resource
+    OSS ossClient;
 
     @Test
     void testUpdateFile() throws FileNotFoundException {
