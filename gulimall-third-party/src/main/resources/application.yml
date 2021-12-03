@@ -8,11 +8,11 @@ spring:
         namespace: 43069866-d4b7-4f71-94c8-dca6dacdd2fa
     # oss 文件上传服务器配置
     alicloud:
-      access-key: LTAI4FwvfjSycd1APnuG9bjj
-      secret-key: O6xaxyiWfSIitcOkSuK27ju4hXT5Hl
+      access-key: 
+      secret-key: 
       oss:
-        endpoint: oss-cn-beijing.aliyuncs.com
-        bucket: mygulimall-jx
+        endpoint: 
+        bucket: 
   # 服务名称
   application:
     name: gulimall-third-party
