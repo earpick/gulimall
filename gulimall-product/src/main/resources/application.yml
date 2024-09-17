@@ -1,0 +1,44 @@
+# 设置端口
+server:
+  port: 12000
+
+# 控制台打印debug日志
+logging:
+  level:
+    com.study.gulimall: debug
+
+# 配置数据库源
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.1.125:3306/gulimall_pms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 配置nacos 注册中心
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.125:8848
+# oss 文件上传服务器配置
+    alicloud:
+      access-key: LTAI5tLR5jqVqDdDuZJkpbwu
+      secret-key: PUqjTLyi1Ymd2Wrn1onfJSxfeF62K8
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+
+  application:
+    name: gulimall-product
+
+# MybatisPlus配置
+# sql映射文件位置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  #主键自增
+  global-config:
+    db-config:
+      id-type: auto
+      # mybatis-plus 全局配置逻辑删除
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+
